@@ -5,3 +5,4 @@ env/
 .vs/
 __pycache__/
 config.py
+*.db
