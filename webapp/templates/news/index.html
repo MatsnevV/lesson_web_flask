@@ -1,0 +1,30 @@
+{% extends "base.html"%}
+{% block content %}   
+   <div class="row">
+        <div class="col-9">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="alert alert-warning" role="alert">
+                {% for message in messages %}
+                {{ message }}<br>
+                {% endfor %}
+            </div>
+            {% endif %}
+            {% endwith %}
+            <h2>NEWs</h2>
+            {% for news in news_list %}
+            <h5><a href="{{ news.url }}">{{ news.title }}</a></h5>
+            <p>{{ news.published.strftime('%d.%m.%Y') }}</p>
+            <hr />
+            {% endfor %}
+        </div>
+        <div class="col-3">
+            <h2>Прогноз погоды</h2>
+            {% if weather %}
+                Погода: {{ weather.temp_C }}, ощущается как {{ weather.FeelsLikeC }}
+            {% else %}
+                Cервис погоды временно не доступен
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}   

@@ -1,3 +1,4 @@
+from datetime import timedelta
 import os
 
 basedir = os.path.abspath(os.path.dirname(__file__))
@@ -8,3 +9,6 @@ WEATHER_URL = 'http://api.worldweatheronline.com/premium/v1/weather.ashx'
 SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, '..', 'webapp.db')
 
 SECRET_KEY = "afasfasf42336**%!#$Jqegqegqezxcxbbnm)(&(^__)+@#$@532225247890-=09H325>CKAOEPfdsgH:"
+
+
+REMEMBER_COOKIE_DURATION = timedelta(days=5)
